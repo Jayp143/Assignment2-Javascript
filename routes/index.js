@@ -83,7 +83,7 @@ router.post('/updateAd/:id', needlogin, async (req, res) => {
   }
 });
 
-router.post("/deleteAd/:id", needlogin, async (req, res) => {
+router.get("/deleteAd/:id", needlogin, async (req, res) => {
   try {
     const myadd = await Ad.findByIdAndDelete(req.params.id)
     if (!myadd) res.render("error", {
