@@ -1,5 +1,11 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+ h2(style="text-align: center;") Advertisements
+  each ad in ads
+   hr
+   div.card(style="width=100px%; text-align: center;")
+   .card-header=ad.Title
+   if login
+     a.btn.btn-primary.card-link(href="/viewAd/"+ad._id) View
+     a.btn.btn-success.card-link(href="/editAd/"+ad._id) Edit
+     a.btn.btn-danger.card-link(href="/deleteAd/"+ad._id) Delete

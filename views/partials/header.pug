@@ -1,0 +1,41 @@
+doctype html
+head
+  title Bootstrap Example
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='/home') Classified Advertisements
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='/home') Home
+      li.nav-item
+        a.nav-link(href='/') Advertisements
+    if !login
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/users/auth/google')
+            span.glyphicon.glyphicon-user
+            |  Sign Up
+        li.nav-item
+          a.nav-link(href='/users/auth/google')
+            span.glyphicon.glyphicon-log-in
+            |  Login
+    else
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/addNew')
+            span.glyphicon.glyphicon-add
+            |  Add Advertisement
+      ul.nav.navbar-nav.navbar-right
+        li.nav-item
+          a.nav-link(href='/users/auth/logout')
+            span.glyphicon.glyphicon-log-out
+            |  Logout
+.container

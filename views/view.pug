@@ -1,0 +1,8 @@
+extends layout
+block content
+  .jumbotron.jumbotron-fluid
+    .container
+      h1=ads.Title
+      h4="$"+ads.Price
+      p=ads.Description
+      a.btn.btn-info(href="/") Go Back
